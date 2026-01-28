@@ -37,10 +37,10 @@
 
     <!-- Logo -->
     <div class="flex items-center gap-5">
-      <img src="logo.jpeg" class="h-14 object-contain">
+      <img src="logo.png" class="h-14 object-contain">
 
       <div class="leading-tight">
-        <div class="font-serif text-lg tracking-[0.35em] uppercase">
+        <div class="font-serif text-sm tracking-[0.35em] uppercase">
           Nazarena Mancino
         </div>
         <div class="text-[10px] tracking-[0.4em] text-neutral-500 uppercase">
@@ -78,28 +78,33 @@
 
 
 <!-- ================= HERO ================= -->
-<section id="inicio" class="h-screen flex items-center justify-center pt-24">
+<section id="inicio" class="h-screen flex items-center justify-center pt-24 bg-[#f7f6f3]">
 
   <div class="text-center px-6">
 
-    <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-semibold tracking-wide mb-10">
-      Nazarena Mancino<br>
-      <span class="text-gold">Estudio Creativo</span>
-    </h1>
+<!-- Logo grande con presencia -->
+<div class="flex justify-center mb-1">
+  <img src="logo.png" class="h-64 md:h-80 lg:h-[30rem] w-auto object-contain">
+</div>
 
-    <p class="text-neutral-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-      Contenido, fotografía y estética para marcas que quieren verse profesionales,
-      coherentes y auténticas.
-    </p>
+<!-- Claim -->
+<p class="-mt-20 text-neutral-700 text-sm md:text-base max-w-lg mx-auto leading-tight tracking-wide">
+  Contenido, fotografía y estética para marcas que quieren verse profesionales,
+  coherentes y auténticas.
+</p>
 
-    <div class="mt-16 flex flex-col items-center gap-8">
+
+    <!-- Acciones -->
+    <div class="mt-14 flex flex-col items-center gap-10">
 
       <a href="https://wa.me/5491138178449" target="_blank"
-        class="border border-black px-12 py-4 tracking-[0.3em] text-xs hover:bg-black hover:text-white transition">
-        ESCRIBIR
+        class="group relative overflow-hidden border border-black px-16 py-4 tracking-[0.4em] text-xs transition-all duration-300">
+        <span class="relative z-10 group-hover:text-white transition">ESCRIBIR</span>
+        <div class="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
       </a>
 
-      <button onclick="openAbout()" class="text-xs tracking-[0.3em] text-neutral-500 hover:text-black transition">
+      <button onclick="openAbout()"
+        class="text-[11px] tracking-[0.4em] text-neutral-500 hover:text-black transition-all duration-300">
         SOBRE MÍ
       </button>
 
@@ -108,6 +113,9 @@
   </div>
 
 </section>
+
+
+
 
 <!-- ================= PORTFOLIO ================= -->
 <section id="portfolio" class="py-32 max-w-7xl mx-auto px-6">
@@ -208,7 +216,7 @@
   <h2 class="font-serif text-4xl mb-10">Contacto</h2>
 
   <p class="text-neutral-600 mb-16">
-    Instagram: <b>@nm.studio</b>
+    Instagram: <b>@nm.estudio</b>
   </p>
 
   <a href="https://wa.me/5491138178449" target="_blank"
