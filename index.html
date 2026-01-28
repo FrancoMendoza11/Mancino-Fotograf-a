@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Nazarena Mancino — Estudio Creativo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contenido, fotografía y estética para marcas que quieren verse profesionales, coherentes y auténticas.">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -11,12 +12,212 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
+  <!-- CSS Personalizado -->
+  <style>
+    /* ================= ANIMACIONES ================= */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% center;
+      }
+      100% {
+        background-position: 200% center;
+      }
+    }
+
+    /* ================= CLASES DE ANIMACIÓN ================= */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-300 { transition-delay: 300ms; }
+    .delay-400 { transition-delay: 400ms; }
+    .delay-500 { transition-delay: 500ms; }
+
+    .logo-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .scale-in {
+      animation: scaleIn 0.6s ease-out forwards;
+    }
+
+    /* ================= EFECTOS ESPECIALES ================= */
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-hover {
+      transition: transform 0.5s ease;
+      overflow: hidden;
+    }
+
+    .image-hover img {
+      transition: transform 0.8s ease;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-hover:hover img {
+      transform: scale(1.08);
+    }
+
+    .gradient-border {
+      position: relative;
+    }
+
+    .gradient-border::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 1px;
+      background: linear-gradient(45deg, #C6A45A, #000, #C6A45A);
+      border-radius: inherit;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gradient-border:hover::after {
+      opacity: 1;
+    }
+
+    .shimmer-text {
+      background: linear-gradient(90deg, #000 0%, #C6A45A 50%, #000 100%);
+      background-size: 200% auto;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 3s linear infinite;
+    }
+
+    /* ================= LOADER ================= */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-logo {
+      width: 80px;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    /* ================= MODAL ================= */
+    .modal-overlay {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-content {
+      animation: scaleIn 0.3s ease-out;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    /* ================= NAVBAR SCROLL ================= */
+    .navbar-scroll {
+      transform: translateY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-hidden {
+      transform: translateY(-100%);
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      .logo-float {
+        animation: float 4s ease-in-out infinite;
+      }
+      
+      .animate-on-scroll {
+        transition-duration: 0.6s;
+      }
+      
+      .image-hover:hover img {
+        transform: scale(1.05);
+      }
+    }
+  </style>
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            gold: '#C6A45A'
+            gold: '#C6A45A',
+            beige: '#f7f6f3'
           },
           fontFamily: {
             serif: ['Playfair Display', 'serif'],
@@ -28,17 +229,19 @@
   </script>
 </head>
 
-<body class="bg-white text-neutral-900 font-sans">
+<body class="bg-white text-neutral-900 font-sans overflow-x-hidden">
+
+<!-- ================= LOADER ================= -->
+<div class="loader" id="loader">
+  <img src="logo.png" alt="Nazarena Mancino Estudio Creativo" class="loader-logo">
+</div>
 
 <!-- ================= NAV ================= -->
-<header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-neutral-100">
-
+<header id="navbar" class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-neutral-100 navbar-scroll transition-all duration-300">
   <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-
     <!-- Logo -->
     <div class="flex items-center gap-5">
-      <img src="logo.png" class="h-14 object-contain">
-
+      <img src="logo.png" alt="Logo" class="h-14 object-contain">
       <div class="leading-tight">
         <div class="font-serif text-sm tracking-[0.35em] uppercase">
           Nazarena Mancino
@@ -50,217 +253,447 @@
     </div>
 
     <!-- Desktop menu -->
-<nav class="hidden md:flex gap-10 text-[11px] tracking-[0.35em] uppercase text-neutral-700">
-  <a href="#inicio" class="hover:text-gold transition">Inicio</a>
-  <a href="javascript:void(0)" onclick="openAbout()" class="hover:text-gold transition">Sobre mí</a>
-  <a href="#servicios" class="hover:text-gold transition">Servicios</a>
-  <a href="#contacto" class="hover:text-gold transition">Contacto</a>
-</nav>
+    <nav class="hidden md:flex gap-10 text-[11px] tracking-[0.35em] uppercase text-neutral-700">
+      <a href="#inicio" class="hover:text-gold transition duration-300 relative group">
+        Inicio
+        <span class="absolute bottom-0 left-0 w-0 h-px bg-gold group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a href="javascript:void(0)" onclick="openAbout()" class="hover:text-gold transition duration-300 relative group">
+        Sobre mí
+        <span class="absolute bottom-0 left-0 w-0 h-px bg-gold group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a href="#servicios" class="hover:text-gold transition duration-300 relative group">
+        Servicios
+        <span class="absolute bottom-0 left-0 w-0 h-px bg-gold group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a href="#contacto" class="hover:text-gold transition duration-300 relative group">
+        Contacto
+        <span class="absolute bottom-0 left-0 w-0 h-px bg-gold group-hover:w-full transition-all duration-300"></span>
+      </a>
+    </nav>
 
-
-    <!-- Mobile -->
-    <button onclick="toggleMenu()" class="md:hidden text-xl">☰</button>
+    <!-- Mobile menu button -->
+    <button onclick="toggleMenu()" class="md:hidden text-xl hover:text-gold transition duration-300">
+      ☰
+    </button>
   </div>
 
   <!-- Mobile menu -->
-<div id="mobileMenu" class="hidden bg-white border-t border-neutral-100">
-  <div class="flex flex-col p-6 gap-6 text-[11px] tracking-[0.35em] uppercase">
-    <a href="#inicio" onclick="toggleMenu()">Inicio</a>
-    <a href="javascript:void(0)" onclick="openAbout()">Sobre mí</a>
-    <a href="#servicios" onclick="toggleMenu()">Servicios</a>
-    <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+  <div id="mobileMenu" class="hidden bg-white border-t border-neutral-100">
+    <div class="flex flex-col p-6 gap-6 text-[11px] tracking-[0.35em] uppercase">
+      <a href="#inicio" onclick="toggleMenu()" class="hover:text-gold transition duration-300 py-2 border-b border-neutral-100">Inicio</a>
+      <a href="javascript:void(0)" onclick="openAbout(); toggleMenu();" class="hover:text-gold transition duration-300 py-2 border-b border-neutral-100">Sobre mí</a>
+      <a href="#servicios" onclick="toggleMenu()" class="hover:text-gold transition duration-300 py-2 border-b border-neutral-100">Servicios</a>
+      <a href="#contacto" onclick="toggleMenu()" class="hover:text-gold transition duration-300 py-2">Contacto</a>
+    </div>
   </div>
-</div>
-
-  </div>
-
 </header>
 
-
 <!-- ================= HERO ================= -->
-<section id="inicio" class="h-screen flex items-center justify-center pt-24 bg-[#f7f6f3]">
+<section id="inicio" class="min-h-screen flex items-center justify-center pt-24 bg-beige px-6">
+  <div class="text-center max-w-4xl mx-auto">
+    <!-- Logo grande con animación -->
+    <div class="flex justify-center mb-8">
+      <img src="logo.png" alt="Nazarena Mancino Logo" class="h-48 md:h-64 lg:h-80 w-auto object-contain logo-float">
+    </div>
 
-  <div class="text-center px-6">
-
-<!-- Logo grande con presencia -->
-<div class="flex justify-center mb-1">
-  <img src="logo.png" class="h-64 md:h-80 lg:h-[30rem] w-auto object-contain">
-</div>
-
-<!-- Claim -->
-<p class="-mt-20 text-neutral-700 text-sm md:text-base max-w-lg mx-auto leading-tight tracking-wide">
-  Contenido, fotografía y estética para marcas que quieren verse profesionales,
-  coherentes y auténticas.
-</p>
-
+    <!-- Claim -->
+    <p class="text-neutral-700 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed tracking-wide opacity-0 animate-on-scroll delay-100 mb-12">
+      Contenido, fotografía y estética para marcas que quieren verse profesionales, coherentes y auténticas.
+    </p>
 
     <!-- Acciones -->
-    <div class="mt-14 flex flex-col items-center gap-10">
-
+    <div class="flex flex-col items-center gap-8 opacity-0 animate-on-scroll delay-300">
       <a href="https://wa.me/5491138178449" target="_blank"
-        class="group relative overflow-hidden border border-black px-16 py-4 tracking-[0.4em] text-xs transition-all duration-300">
-        <span class="relative z-10 group-hover:text-white transition">ESCRIBIR</span>
+        class="group relative overflow-hidden border border-black px-16 py-4 tracking-[0.4em] text-xs hover-lift gradient-border">
+        <span class="relative z-10 group-hover:text-white transition-colors duration-300">ESCRIBIR</span>
         <div class="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
       </a>
 
       <button onclick="openAbout()"
-        class="text-[11px] tracking-[0.4em] text-neutral-500 hover:text-black transition-all duration-300">
-        SOBRE MÍ
+        class="text-[11px] tracking-[0.4em] text-neutral-500 hover:text-gold transition-all duration-300 group">
+        <span class="group-hover:tracking-[0.5em] transition-all duration-300">SOBRE MÍ</span>
       </button>
-
     </div>
-
   </div>
-
 </section>
-
-
-
 
 <!-- ================= PORTFOLIO ================= -->
 <section id="portfolio" class="py-32 max-w-7xl mx-auto px-6">
-
-  <h2 class="font-serif text-4xl mb-24 text-center">
+  <h2 class="font-serif text-4xl md:text-5xl mb-24 text-center opacity-0 animate-on-scroll">
     Portfolio
   </h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Columna 1 -->
+    <div class="space-y-8">
+      <div class="image-hover h-64 md:h-80 opacity-0 animate-on-scroll delay-100">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=80" 
+             alt="Fotografía de moda" class="w-full h-full object-cover">
+      </div>
+      <div class="image-hover h-80 md:h-96 opacity-0 animate-on-scroll delay-300">
+        <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=900&q=80" 
+             alt="Retrato profesional" class="w-full h-full object-cover">
+      </div>
+    </div>
 
-    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=80" class="w-full object-cover">
+    <!-- Columna 2 -->
+    <div class="space-y-8">
+      <div class="image-hover h-80 md:h-96 opacity-0 animate-on-scroll delay-200">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" 
+             alt="Fotografía de producto" class="w-full h-full object-cover">
+      </div>
+      <div class="image-hover h-64 md:h-80 opacity-0 animate-on-scroll delay-400">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" 
+             alt="Fotografía editorial" class="w-full h-full object-cover">
+      </div>
+    </div>
 
-    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" class="w-full object-cover">
-
-    <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&w=900&q=80" class="w-full object-cover">
-
-    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" class="w-full object-cover">
-
-    <img src="https://images.unsplash.com/photo-1500336624523-d727130c3328?auto=format&fit=crop&w=900&q=80" class="w-full object-cover">
-
-    <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=900&q=80" class="w-full object-cover">
-
+    <!-- Columna 3 -->
+    <div class="space-y-8">
+      <div class="image-hover h-64 md:h-80 opacity-0 animate-on-scroll delay-300">
+        <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&w=900&q=80" 
+             alt="Fotografía de marca" class="w-full h-full object-cover">
+      </div>
+      <div class="image-hover h-80 md:h-96 opacity-0 animate-on-scroll delay-500">
+        <img src="https://images.unsplash.com/photo-1500336624523-d727130c3328?auto=format&fit=crop&w=900&q=80" 
+             alt="Fotografía creativa" class="w-full h-full object-cover">
+      </div>
+    </div>
   </div>
-
 </section>
-
-
 
 <!-- ================= SERVICIOS ================= -->
 <section id="servicios" class="py-32 max-w-6xl mx-auto px-6">
+  <h2 class="font-serif text-4xl md:text-5xl mb-24 text-center opacity-0 animate-on-scroll">
+    Servicios
+  </h2>
 
-  <h2 class="font-serif text-4xl mb-24 text-center">Servicios</h2>
+  <!-- Fotografía de Familias y Bebés -->
+  <div class="mb-40 opacity-0 animate-on-scroll delay-100">
+    <h3 class="font-serif text-3xl mb-10 text-center md:text-left">Fotografía de Familias y Bebés</h3>
 
-  <!-- INSTAGRAM -->
-  <div class="mb-32">
-    <h3 class="font-serif text-3xl mb-8">Gestión de Instagram</h3>
-    <p class="text-neutral-600 max-w-3xl mb-10 leading-relaxed">
-      Contenido estratégico para marcas que quieren verse profesionales, activas y atractivas...
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="border p-8 hover-lift transition-all duration-300">
+        <h4 class="font-serif text-2xl mb-6 text-gold">Plan Básico</h4>
+        <ul class="space-y-3 text-neutral-700 mb-6">
+          <li class="flex items-start">
+            <span class="text-gold mr-2">•</span>
+            <span>1 sesión fotográfica</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-2">•</span>
+            <span>1 vestuario</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-2">•</span>
+            <span>1 escenografía en exteriores</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-2">•</span>
+            <span>10 fotos editadas profesionalmente</span>
+          </li>
+        </ul>
+        <div class="pt-6 border-t border-neutral-200">
+          <p class="text-neutral-600"><b>Inversión:</b></p>
+          <p class="text-3xl font-serif text-gold mt-2">$100.000</p>
+        </div>
+      </div>
+
+      <div class="border p-8 hover-lift transition-all duration-300">
+        <h4 class="font-serif text-2xl mb-6 text-gold">Plan Estándar</h4>
+        <ul class="space-y-3 text-neutral-700 mb-6">
+          <li class="flex items-start">
+            <span class="text-gold mr-2">•</span>
+            <span>1 sesión fotográfica</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-2">•</span>
+            <span>2 vestuarios diferentes</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-2">•</span>
+            <span>1 escenografía en exteriores</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-2">•</span>
+            <span>15 fotos editadas profesionalmente</span>
+          </li>
+        </ul>
+        <div class="pt-6 border-t border-neutral-200">
+          <p class="text-neutral-600"><b>Inversión:</b></p>
+          <p class="text-3xl font-serif text-gold mt-2">$150.000</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-neutral-500 mt-10 text-center md:text-left text-sm">
+      * 50% para reservar fecha y 50% el día de la sesión.
     </p>
+  </div>
 
-    <div class="grid md:grid-cols-2 gap-12 text-neutral-700">
-      <ul class="space-y-3">
-        <li>• Gestión completa de Instagram</li>
-        <li>• Creación de contenido mensual</li>
-        <li>• 15 posteos + 30 historias</li>
-        <li>• Textos pensados para vender</li>
-        <li>• Organización estética y coherencia visual</li>
-        <li>• Análisis básico de resultados</li>
-      </ul>
+  <!-- Creación de Contenido Visual para Marcas -->
+  <div class="opacity-0 animate-on-scroll delay-200">
+    <h3 class="font-serif text-3xl mb-10 text-center md:text-left">
+      Creación de Contenido Visual para Marcas
+    </h3>
 
-      <div class="space-y-4">
-        <p><b>Valor:</b> $180.000 / mes</p>
+    <div class="max-w-3xl space-y-6 text-neutral-600 leading-relaxed mb-16">
+      <p class="text-lg">
+        Creo contenido visual para redes sociales, a través de fotografía y video, ayudando a las marcas a comunicar su esencia de forma clara y atractiva.
+      </p>
+      <p>
+        Produzco fotos, reels y piezas audiovisuales pensadas para conectar con la audiencia, fortalecer la identidad visual y acompañar el crecimiento de la marca.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 border-t pt-12">
+      <div>
+        <h4 class="font-serif text-2xl mb-6">
+          Hablemos de tu marca
+        </h4>
+        <p class="text-neutral-600 mb-10 leading-relaxed">
+          Contame tu idea y armamos juntos una propuesta de contenido visual pensada a medida, alineada a tu identidad y a tus objetivos.
+        </p>
+        <a href="https://wa.me/5491138178449" target="_blank"
+          class="inline-block border border-black px-12 py-4 tracking-[0.35em] text-xs hover-lift gradient-border hover:bg-black hover:text-white transition-all duration-300">
+          HABLAR POR WHATSAPP
+        </a>
+      </div>
+
+      <div class="flex items-center justify-center">
+        <div class="border p-10 w-full max-w-sm text-center hover-lift transition-all duration-300">
+          <p class="text-sm tracking-[0.3em] text-neutral-500 mb-4 uppercase">
+            Inversión Mensual
+          </p>
+          <p class="text-4xl font-serif text-gold mb-2 shimmer-text">$180.000</p>
+          <p class="text-neutral-500 text-sm">por mes</p>
+          <p class="text-xs text-neutral-400 mt-4">* Plan personalizado según necesidades</p>
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- FAMILIAS -->
-  <div>
-    <h3 class="font-serif text-3xl mb-8">Fotografía de Familias y Bebés</h3>
-
-    <div class="grid md:grid-cols-2 gap-16">
-
-      <div class="border p-10">
-        <h4 class="font-serif text-xl mb-4">Plan Básico</h4>
-        <ul class="space-y-2 text-neutral-700">
-          <li>• 1 sesión</li>
-          <li>• 1 vestuario</li>
-          <li>• 1 escenografía en exteriores</li>
-          <li>• 10 fotos editadas</li>
-          <li class="mt-4"><b>Valor:</b> $100.000</li>
-        </ul>
-      </div>
-
-      <div class="border p-10">
-        <h4 class="font-serif text-xl mb-4">Plan Estándar</h4>
-        <ul class="space-y-2 text-neutral-700">
-          <li>• 1 sesión</li>
-          <li>• 2 vestuarios</li>
-          <li>• 1 escenografía en exteriores</li>
-          <li>• 15 fotos editadas</li>
-          <li class="mt-4"><b>Valor:</b> $150.000</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <p class="text-neutral-500 mt-10">
-      50% para reservar fecha y 50% el día de la sesión.
-    </p>
-
-  </div>
-
 </section>
 
 <!-- ================= CONTACTO ================= -->
-<section id="contacto" class="py-32 text-center border-t">
+<section id="contacto" class="py-32 text-center border-t bg-beige">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="font-serif text-4xl md:text-5xl mb-10 opacity-0 animate-on-scroll">
+      Contacto
+    </h2>
+    
+    <p class="text-neutral-700 text-lg mb-8 opacity-0 animate-on-scroll delay-100">
+      Hablemos de tu proyecto
+    </p>
+    
+    <div class="mb-16 opacity-0 animate-on-scroll delay-200">
+      <p class="text-neutral-600 mb-4">
+        Instagram: 
+        <a href="https://instagram.com/nm.estudio" target="_blank" 
+           class="font-semibold text-black hover:text-gold transition duration-300">
+          @nm.estudio
+        </a>
+      </p>
+      <p class="text-neutral-600">
+        WhatsApp: 
+        <a href="https://wa.me/5491138178449" target="_blank"
+           class="font-semibold text-black hover:text-gold transition duration-300">
+          +54 9 11 3817-8449
+        </a>
+      </p>
+    </div>
 
-  <h2 class="font-serif text-4xl mb-10">Contacto</h2>
-
-  <p class="text-neutral-600 mb-16">
-    Instagram: <b>@nm.estudio</b>
-  </p>
-
-  <a href="https://wa.me/5491138178449" target="_blank"
-    class="border border-black px-12 py-4 tracking-[0.3em] text-xs hover:bg-black hover:text-white transition">
-    ESCRIBIR POR WHATSAPP
-  </a>
-
+    <a href="https://wa.me/5491138178449" target="_blank"
+      class="inline-block border border-black px-12 py-4 tracking-[0.35em] text-xs hover-lift gradient-border hover:bg-black hover:text-white transition-all duration-300 opacity-0 animate-on-scroll delay-300">
+      ESCRIBIR POR WHATSAPP
+    </a>
+  </div>
 </section>
 
-<!-- ================= MODAL SOBRE MI ================= -->
-<div id="aboutModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-6">
+<!-- ================= FOOTER ================= -->
+<footer class="py-10 text-center border-t text-neutral-500 text-sm">
+  <div class="max-w-7xl mx-auto px-6">
+    <p>© <span id="currentYear"></span> Nazarena Mancino Estudio Creativo. Todos los derechos reservados.</p>
+  </div>
+</footer>
 
-  <div class="bg-white max-w-3xl w-full p-12 relative overflow-y-auto max-h-[90vh]">
+<!-- ================= MODAL SOBRE MÍ ================= -->
+<div id="aboutModal" class="hidden fixed inset-0 z-50 modal-overlay flex items-center justify-center p-4">
+  <div class="bg-white max-w-4xl w-full modal-content relative">
+    <button onclick="closeAbout()" class="absolute top-4 right-4 text-2xl text-neutral-400 hover:text-black transition duration-300 z-10">
+      ✕
+    </button>
+    
+    <div class="grid md:grid-cols-2 gap-8 p-8 md:p-12">
+      <!-- Foto -->
+      <div class="image-hover h-64 md:h-full">
+        <img src="foto1.jpeg" alt="Nazarena Mancino" class="w-full h-full object-cover">
+      </div>
 
-    <button onclick="closeAbout()" class="absolute top-6 right-6 text-xl">✕</button>
+      <!-- Texto -->
+      <div>
+        <h2 class="font-serif text-3xl mb-4 text-gold">Nazarena Mancino</h2>
+        <p class="mb-6 text-neutral-700 text-lg">Soy fotógrafa y creadora visual.</p>
 
-    <h2 class="font-serif text-3xl mb-6">Nazarena Mancino</h2>
-    <p class="mb-6">Soy fotógrafa y creadora visual.</p>
+        <h3 class="font-serif text-xl mb-4 text-black">Formación</h3>
+        <ul class="space-y-3 text-neutral-700">
+          <li class="flex items-start">
+            <span class="text-gold mr-2">•</span>
+            <span>Fotografía e Iluminación Profesional — Motivarte</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-2">•</span>
+            <span>Tecnicatura en Marketing — Universidad FASTA</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-2">•</span>
+            <span>Community Manager & Social Media Manager</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-2">•</span>
+            <span>Copywriting: escribir para vender</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-2">•</span>
+            <span>Marca personal para emprendedoras</span>
+          </li>
+        </ul>
 
-    <h3 class="font-serif text-xl mb-4">Formación</h3>
-    <ul class="space-y-2 text-neutral-700">
-      <li>• Fotografía e Iluminación Profesional — Motivarte</li>
-      <li>• Tecnicatura en Marketing — Universidad FASTA</li>
-      <li>• Community Manager & Social Media Manager</li>
-      <li>• Copywriting: escribir para vender</li>
-      <li>• Marca personal para emprendedoras</li>
-    </ul>
-
+        <div class="mt-10 pt-6 border-t border-neutral-200">
+          <p class="text-neutral-600 text-sm">
+            Con más de 5 años de experiencia creando contenido visual para marcas y personas, mi objetivo es ayudarte a transmitir tu esencia de forma auténtica y profesional.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- ================= JS ================= -->
+<!-- ================= SCRIPT ================= -->
 <script>
-  function toggleMenu() {
-    document.getElementById("mobileMenu").classList.toggle("hidden");
+  // Loader
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('loader').classList.add('hidden');
+      // Iniciar animaciones después del loader
+      setTimeout(() => {
+        initAnimations();
+      }, 100);
+    }, 800);
+  });
+
+  // Inicializar año actual
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+  // Funciones de animación
+  function initAnimations() {
+    // Observer para animaciones al hacer scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observar todos los elementos con animación
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Navbar scroll effect
+    let lastScroll = 0;
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll <= 0) {
+        navbar.classList.remove('navbar-hidden');
+        navbar.classList.add('navbar-scroll');
+        return;
+      }
+      
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        // Scroll down - hide navbar
+        navbar.classList.remove('navbar-scroll');
+        navbar.classList.add('navbar-hidden');
+      } else {
+        // Scroll up - show navbar
+        navbar.classList.remove('navbar-hidden');
+        navbar.classList.add('navbar-scroll');
+      }
+      
+      lastScroll = currentScroll;
+    });
+
+    // Smooth scroll para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        if(this.getAttribute('href') === '#') return;
+        
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if(targetId === '#inicio') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+        
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+          const headerOffset = 80;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
   }
 
+  // Funciones de modal
   function openAbout() {
-    document.getElementById("aboutModal").classList.remove("hidden");
+    const modal = document.getElementById("aboutModal");
+    modal.classList.remove("hidden");
+    document.body.style.overflow = 'hidden';
   }
 
   function closeAbout() {
-    document.getElementById("aboutModal").classList.add("hidden");
+    const modal = document.getElementById("aboutModal");
+    modal.classList.add("hidden");
+    document.body.style.overflow = 'auto';
   }
+
+  // Mobile menu
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+
+  // Close modal with ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAbout();
+  });
+
+  // Close modal when clicking outside
+  document.getElementById('aboutModal').addEventListener('click', (e) => {
+    if (e.target.id === 'aboutModal') {
+      closeAbout();
+    }
+  });
+
+  // Inicializar cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', () => {
+    initAnimations();
+  });
 </script>
 
 </body>
