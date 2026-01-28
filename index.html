@@ -1,247 +1,258 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Nazarena Mancino Fotografía</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Nazarena Mancino — Estudio Creativo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Tailwind CDN -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
+          colors: {
+            gold: '#C6A45A'
+          },
           fontFamily: {
             serif: ['Playfair Display', 'serif'],
-            sans: ['Inter', 'sans-serif'],
+            sans: ['Inter', 'sans-serif']
           }
         }
       }
     }
   </script>
-
-  <style>
-    html { scroll-behavior: smooth; }
-
-    /* Hero slow cinematic zoom */
-    .hero-zoom {
-      animation: heroZoom 25s ease-in-out infinite alternate;
-    }
-
-    @keyframes heroZoom {
-      from { transform: scale(1) translateY(0px); }
-      to   { transform: scale(1.15) translateY(-40px); }
-    }
-  </style>
 </head>
 
-<body class="bg-neutral-50 text-neutral-900 font-sans">
+<body class="bg-white text-neutral-900 font-sans">
 
 <!-- ================= NAV ================= -->
-<nav class="fixed top-0 left-0 w-full z-50 bg-neutral-900/60 backdrop-blur-md text-white">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-neutral-100">
 
-<a href="#" class="font-serif text-2xl md:text-3xl tracking-[0.01em] font-semibold relative">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
-  <span class="relative z-10">
-    NM
-  </span>
+    <!-- Logo -->
+    <div class="flex items-center gap-5">
+      <img src="logo.jpeg" class="h-14 object-contain">
 
-  <!-- subtle glow -->
-  <span class="absolute inset-0 blur-md opacity-40 pointer-events-none select-none">
-    NM
-  </span>
-
-</a>
-
-
-    <!-- Desktop -->
-    <div class="hidden md:flex gap-10 text-xs tracking-widest uppercase">
-      <a href="#portfolio" class="hover:opacity-60 transition">Portfolio</a>
-      <a href="#about" class="hover:opacity-60 transition">Sobre mí</a>
-      <a href="#services" class="hover:opacity-60 transition">Servicios</a>
-      <a href="#contact" class="hover:opacity-60 transition">Contacto</a>
+      <div class="leading-tight">
+        <div class="font-serif text-lg tracking-[0.35em] uppercase">
+          Nazarena Mancino
+        </div>
+        <div class="text-[10px] tracking-[0.4em] text-neutral-500 uppercase">
+          Estudio Creativo
+        </div>
+      </div>
     </div>
 
-    <!-- Mobile button -->
-    <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+    <!-- Desktop menu -->
+<nav class="hidden md:flex gap-10 text-[11px] tracking-[0.35em] uppercase text-neutral-700">
+  <a href="#inicio" class="hover:text-gold transition">Inicio</a>
+  <a href="javascript:void(0)" onclick="openAbout()" class="hover:text-gold transition">Sobre mí</a>
+  <a href="#servicios" class="hover:text-gold transition">Servicios</a>
+  <a href="#contacto" class="hover:text-gold transition">Contacto</a>
+</nav>
+
+
+    <!-- Mobile -->
+    <button onclick="toggleMenu()" class="md:hidden text-xl">☰</button>
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobileMenu" class="hidden bg-neutral-900 text-white text-center py-10 space-y-6 text-sm tracking-widest uppercase">
-    <a onclick="toggleMenu()" href="#portfolio" class="block">Portfolio</a>
-    <a onclick="toggleMenu()" href="#about" class="block">Sobre mí</a>
-    <a onclick="toggleMenu()" href="#services" class="block">Servicios</a>
-    <a onclick="toggleMenu()" href="#contact" class="block">Contacto</a>
-  </div>
-</nav>
-
-<!-- ================= HERO ================= -->
-<section class="relative h-screen overflow-hidden">
-
-  <!-- Background -->
-  <div class="absolute inset-0 hero-zoom bg-cover bg-center"
-       style="background-image:url('https://plus.unsplash.com/premium_photo-1674048381806-814bb2126f73?q=80&w=1242&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
-  </div>
-
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black/40"></div>
-
-  <!-- Content -->
-<div class="relative z-10 h-full flex items-center justify-center text-center px-6">
-  <div class="max-w-5xl">
-
-    <!-- Title -->
-    <h1 class="font-serif font-semibold text-6xl md:text-8xl lg:text-[110px] text-white mb-12 leading-[0.95] opacity-0 reveal relative">
-
-      <span class="relative inline-block">
-        Nazarena Mancino
-
-        <!-- Glow layer -->
-        <span class="absolute inset-0 blur-xl opacity-30 text-white pointer-events-none select-none">
-          Nazarena Mancino
-        </span>
-      </span>
-
-      <span class="block text-white/70 text-3xl md:text-4xl lg:text-5xl mt-8 tracking-[0.3em]">
-        FOTOGRAFÍA
-      </span>
-
-    </h1>
-
-    <!-- Subtitle -->
-    <p class="text-white/90 text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed opacity-0 reveal">
-      Books, retratos y fotografía editorial.<br>
-      Imágenes pensadas como piezas artísticas y narrativas visuales.
-    </p>
-
+<div id="mobileMenu" class="hidden bg-white border-t border-neutral-100">
+  <div class="flex flex-col p-6 gap-6 text-[11px] tracking-[0.35em] uppercase">
+    <a href="#inicio" onclick="toggleMenu()">Inicio</a>
+    <a href="javascript:void(0)" onclick="openAbout()">Sobre mí</a>
+    <a href="#servicios" onclick="toggleMenu()">Servicios</a>
+    <a href="#contacto" onclick="toggleMenu()">Contacto</a>
   </div>
 </div>
 
+  </div>
 
+</header>
+
+
+<!-- ================= HERO ================= -->
+<section id="inicio" class="h-screen flex items-center justify-center pt-24">
+
+  <div class="text-center px-6">
+
+    <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-semibold tracking-wide mb-10">
+      Nazarena Mancino<br>
+      <span class="text-gold">Estudio Creativo</span>
+    </h1>
+
+    <p class="text-neutral-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+      Contenido, fotografía y estética para marcas que quieren verse profesionales,
+      coherentes y auténticas.
+    </p>
+
+    <div class="mt-16 flex flex-col items-center gap-8">
+
+      <a href="https://wa.me/5491138178449" target="_blank"
+        class="border border-black px-12 py-4 tracking-[0.3em] text-xs hover:bg-black hover:text-white transition">
+        ESCRIBIR
+      </a>
+
+      <button onclick="openAbout()" class="text-xs tracking-[0.3em] text-neutral-500 hover:text-black transition">
+        SOBRE MÍ
+      </button>
+
+    </div>
+
+  </div>
 
 </section>
 
 <!-- ================= PORTFOLIO ================= -->
-<section id="portfolio" class="py-28 max-w-7xl mx-auto px-6">
-  <h2 class="font-serif text-3xl md:text-4xl mb-16 text-center opacity-0 reveal">
+<section id="portfolio" class="py-32 max-w-7xl mx-auto px-6">
+
+  <h2 class="font-serif text-4xl mb-24 text-center">
     Portfolio
   </h2>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-    <!-- Images -->
-    <img class="opacity-0 reveal transition duration-700 hover:scale-[1.03]"
-      src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=80">
-    <img class="opacity-0 reveal transition duration-700 hover:scale-[1.03]"
-      src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80">
-    <img class="opacity-0 reveal transition duration-700 hover:scale-[1.03]"
-      src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&w=900&q=80">
-    <img class="opacity-0 reveal transition duration-700 hover:scale-[1.03]"
-      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80">
-    <img class="opacity-0 reveal transition duration-700 hover:scale-[1.03]"
-      src="https://images.unsplash.com/photo-1500336624523-d727130c3328?auto=format&fit=crop&w=900&q=80">
-    <img class="opacity-0 reveal transition duration-700 hover:scale-[1.03]"
-      src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=900&q=80">
-  </div>
-</section>
 
-<!-- ================= ABOUT ================= -->
-<section id="about" class="py-28 bg-neutral-100">
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=80" class="w-full object-cover">
 
-    <img class="opacity-0 reveal"
-      src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80">
+    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" class="w-full object-cover">
 
-    <div class="opacity-0 reveal">
-      <h2 class="font-serif text-3xl md:text-4xl mb-10">Sobre mí</h2>
+    <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&w=900&q=80" class="w-full object-cover">
 
-      <p class="text-neutral-700 leading-relaxed mb-6">
-        Mi trabajo se centra en crear imágenes que funcionen como piezas editoriales: fotografías
-        que cuentan algo, que construyen atmósferas y que trascienden el simple retrato.
-      </p>
+    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" class="w-full object-cover">
 
-      <p class="text-neutral-700 leading-relaxed mb-6">
-        Cada sesión es pensada como un pequeño proyecto visual, donde la luz, los gestos y el clima
-        emocional tienen el mismo peso que la estética.
-      </p>
+    <img src="https://images.unsplash.com/photo-1500336624523-d727130c3328?auto=format&fit=crop&w=900&q=80" class="w-full object-cover">
 
-      <p class="text-neutral-700 leading-relaxed">
-        Realizo books, retratos artísticos y trabajos de imagen para marcas y artistas.
-      </p>
-    </div>
+    <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=900&q=80" class="w-full object-cover">
 
   </div>
+
 </section>
 
-<!-- ================= SERVICES ================= -->
-<section id="services" class="py-28 max-w-5xl mx-auto px-6">
-  <h2 class="font-serif text-3xl md:text-4xl mb-16 text-center opacity-0 reveal">Servicios</h2>
 
-  <div class="grid md:grid-cols-3 gap-12 text-center">
-    <div class="border border-neutral-200 p-12 opacity-0 reveal">
-      <h3 class="font-serif text-xl mb-4">Books</h3>
-      <p class="text-neutral-600">Sesiones editoriales personales.</p>
-    </div>
-    <div class="border border-neutral-200 p-12 opacity-0 reveal">
-      <h3 class="font-serif text-xl mb-4">Retratos</h3>
-      <p class="text-neutral-600">Retratos artísticos y profesionales.</p>
-    </div>
-    <div class="border border-neutral-200 p-12 opacity-0 reveal">
-      <h3 class="font-serif text-xl mb-4">Editorial / Branding</h3>
-      <p class="text-neutral-600">Imagen para marcas y proyectos.</p>
+
+<!-- ================= SERVICIOS ================= -->
+<section id="servicios" class="py-32 max-w-6xl mx-auto px-6">
+
+  <h2 class="font-serif text-4xl mb-24 text-center">Servicios</h2>
+
+  <!-- INSTAGRAM -->
+  <div class="mb-32">
+    <h3 class="font-serif text-3xl mb-8">Gestión de Instagram</h3>
+    <p class="text-neutral-600 max-w-3xl mb-10 leading-relaxed">
+      Contenido estratégico para marcas que quieren verse profesionales, activas y atractivas...
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-12 text-neutral-700">
+      <ul class="space-y-3">
+        <li>• Gestión completa de Instagram</li>
+        <li>• Creación de contenido mensual</li>
+        <li>• 15 posteos + 30 historias</li>
+        <li>• Textos pensados para vender</li>
+        <li>• Organización estética y coherencia visual</li>
+        <li>• Análisis básico de resultados</li>
+      </ul>
+
+      <div class="space-y-4">
+        <p><b>Valor:</b> $180.000 / mes</p>
+      </div>
     </div>
   </div>
+
+  <!-- FAMILIAS -->
+  <div>
+    <h3 class="font-serif text-3xl mb-8">Fotografía de Familias y Bebés</h3>
+
+    <div class="grid md:grid-cols-2 gap-16">
+
+      <div class="border p-10">
+        <h4 class="font-serif text-xl mb-4">Plan Básico</h4>
+        <ul class="space-y-2 text-neutral-700">
+          <li>• 1 sesión</li>
+          <li>• 1 vestuario</li>
+          <li>• 1 escenografía en exteriores</li>
+          <li>• 10 fotos editadas</li>
+          <li class="mt-4"><b>Valor:</b> $100.000</li>
+        </ul>
+      </div>
+
+      <div class="border p-10">
+        <h4 class="font-serif text-xl mb-4">Plan Estándar</h4>
+        <ul class="space-y-2 text-neutral-700">
+          <li>• 1 sesión</li>
+          <li>• 2 vestuarios</li>
+          <li>• 1 escenografía en exteriores</li>
+          <li>• 15 fotos editadas</li>
+          <li class="mt-4"><b>Valor:</b> $150.000</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="text-neutral-500 mt-10">
+      50% para reservar fecha y 50% el día de la sesión.
+    </p>
+
+  </div>
+
 </section>
 
-<!-- ================= CONTACT ================= -->
-<section id="contact" class="py-28 bg-neutral-900 text-white text-center">
-  <h2 class="font-serif text-3xl md:text-4xl mb-10 opacity-0 reveal">Contacto</h2>
-  <p class="text-white/70 mb-12 opacity-0 reveal">Para presupuestos y propuestas.</p>
-<a 
-  href="https://wa.me/541138178449?text=Hola%20quiero%20consultar%20por%20una%20sesión%20de%20fotos"
-  target="_blank"
-  class="border border-white px-12 py-4 tracking-widest uppercase text-sm hover:bg-white hover:text-black transition opacity-0 reveal"
->
-  Escribirme
-</a>
+<!-- ================= CONTACTO ================= -->
+<section id="contacto" class="py-32 text-center border-t">
+
+  <h2 class="font-serif text-4xl mb-10">Contacto</h2>
+
+  <p class="text-neutral-600 mb-16">
+    Instagram: <b>@nm.studio</b>
+  </p>
+
+  <a href="https://wa.me/5491138178449" target="_blank"
+    class="border border-black px-12 py-4 tracking-[0.3em] text-xs hover:bg-black hover:text-white transition">
+    ESCRIBIR POR WHATSAPP
+  </a>
 
 </section>
 
-<footer class="py-10 text-center text-sm text-neutral-500">
-  © 2026 Nazarena Mancino Fotografía
-</footer>
+<!-- ================= MODAL SOBRE MI ================= -->
+<div id="aboutModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-6">
+
+  <div class="bg-white max-w-3xl w-full p-12 relative overflow-y-auto max-h-[90vh]">
+
+    <button onclick="closeAbout()" class="absolute top-6 right-6 text-xl">✕</button>
+
+    <h2 class="font-serif text-3xl mb-6">Nazarena Mancino</h2>
+    <p class="mb-6">Soy fotógrafa y creadora visual.</p>
+
+    <h3 class="font-serif text-xl mb-4">Formación</h3>
+    <ul class="space-y-2 text-neutral-700">
+      <li>• Fotografía e Iluminación Profesional — Motivarte</li>
+      <li>• Tecnicatura en Marketing — Universidad FASTA</li>
+      <li>• Community Manager & Social Media Manager</li>
+      <li>• Copywriting: escribir para vender</li>
+      <li>• Marca personal para emprendedoras</li>
+    </ul>
+
+  </div>
+</div>
 
 <!-- ================= JS ================= -->
 <script>
-  // Reveal animations
-  const reveals = document.querySelectorAll('.reveal');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('opacity-100', 'translate-y-0');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  reveals.forEach(el => {
-    el.classList.add('opacity-0', 'translate-y-6', 'transition-all', 'duration-1000');
-    observer.observe(el);
-  });
-
-  // Mobile menu
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-
   function toggleMenu() {
-    mobileMenu.classList.toggle("hidden");
+    document.getElementById("mobileMenu").classList.toggle("hidden");
   }
 
-  menuBtn.addEventListener("click", toggleMenu);
+  function openAbout() {
+    document.getElementById("aboutModal").classList.remove("hidden");
+  }
+
+  function closeAbout() {
+    document.getElementById("aboutModal").classList.add("hidden");
+  }
 </script>
 
 </body>
