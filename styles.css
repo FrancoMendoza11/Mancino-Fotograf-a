@@ -178,3 +178,53 @@
     transition-duration: 0.6s;
   }
 }
+
+/* ================= PORTFOLIO ELEGANTE ================= */
+
+.section-divider {
+  width: 60px;
+  height: 1px;
+  background: #C6A45A;
+  margin: 0 auto 3rem;
+}
+
+.subtitle-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.subtitle-line::before,
+.subtitle-line::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: #C6A45A;
+  opacity: 0.6;
+}
+
+/* Animación refinada */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Hover más premium */
+.image-hover img {
+  transition: transform 1.2s ease;
+}
+
+.image-hover:hover img {
+  transform: scale(1.06);
+}
+
+
+
+
