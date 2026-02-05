@@ -225,6 +225,47 @@
   transform: scale(1.06);
 }
 
+/* Animaciones personalizadas para el hero */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Efecto hover para elementos con clase hover-lift */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(198, 164, 90, 0.15);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  #inicio .text-xl {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  
+  #inicio .font-serif {
+    font-size: 1.25rem;
+  }
+}
 
 

@@ -88,35 +88,99 @@
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
-<section id="inicio" class="min-h-screen flex items-center justify-center pt-24 bg-beige px-6">
-  <div class="text-center max-w-4xl mx-auto">
-    <!-- Logo grande con animación -->
-    <div class="flex justify-center mb-8">
-      <img src="logo.png" alt="Nazarena Mancino Logo" class="h-48 md:h-64 lg:h-80 w-auto object-contain logo-float">
+<!-- ================= HERO MEJORADO ================= -->
+<section id="inicio" class="relative min-h-[110vh] flex items-center justify-center pt-24 pb-20 px-6 overflow-hidden">
+  <!-- Fondo sutil con textura/grano -->
+  <div class="absolute inset-0 bg-beige">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmFpbiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wMSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhaW4pIi8+PC9zdmc+')] opacity-30"></div>
+  </div>
+
+  <!-- Elementos decorativos sutiles -->
+  <div class="absolute top-1/4 left-10 w-32 h-32 border border-gold/10 rotate-12 hidden lg:block"></div>
+  <div class="absolute bottom-1/4 right-10 w-40 h-40 border border-gold/5 -rotate-6 hidden lg:block"></div>
+
+  <div class="relative z-10 text-center max-w-4xl mx-auto w-full">
+    <!-- Logo con efecto de aparición suave - CENTRADO -->
+    <div class="flex justify-center items-center mb-8 md:mb-12">
+      <div class="relative flex justify-center">
+        <!-- Aura sutil detrás del logo -->
+        <div class="absolute inset-0 scale-125 bg-gold/5 blur-xl rounded-full"></div>
+        <img src="logo.png" 
+             alt="Nazarena Mancino Logo" 
+             class="relative h-40 md:h-56 lg:h-72 w-auto object-contain mx-auto
+                    opacity-0 animate-[fadeInUp_1s_ease-out_0.2s_forwards] 
+                    hover:scale-105 transition-transform duration-700 cursor-pointer"
+             onclick="openAbout()">
+      </div>
     </div>
 
-    <!-- Claim -->
-    <p class="text-neutral-700 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed tracking-wide opacity-0 animate-on-scroll delay-100 mb-12">
-      Contenido, fotografía y estética para marcas que quieren verse profesionales, coherentes y auténticas.
-    </p>
+    <!-- Línea decorativa -->
+    <div class="h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-10 
+                opacity-0 animate-[fadeIn_1s_ease-out_0.6s_forwards]"></div>
 
-    <!-- Acciones -->
-    <div class="flex flex-col items-center gap-8 opacity-0 animate-on-scroll delay-300">
+   <!-- Claim mejorado -->
+<p class="text-neutral-700 text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed 
+          tracking-wider font-serif font-light italic mb-14 md:mb-16 px-4
+          opacity-0 animate-[fadeInUp_1s_ease-out_0.8s_forwards]">
+  Historias reales contadas en imágenes pensadas para 
+  <span class="text-gold font-normal not-italic relative">
+    conectar,
+    <span class="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-gold/50 to-transparent"></span>
+  </span>
+  <span class="text-gold font-normal not-italic relative">
+    emocionar y
+    <span class="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-gold/50 to-transparent"></span>
+  </span> 
+  <span class="text-gold font-normal not-italic relative">
+    permanecer en el tiempo.
+    <span class="absolute -bottom-1 left-0 w-0 group-hover:w-full h-px bg-gradient-to-r from-gold/50 to-transparent transition-all duration-500"></span>
+  </span>
+</p>
+
+    <!-- Flecha indicadora -->
+    <div class="opacity-0 animate-[fadeIn_1s_ease-out_1.2s_forwards] mb-10">
+      <svg class="w-6 h-6 mx-auto text-gold/60 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+
+    <!-- Acciones con mejor jerarquía y más espacio -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 
+                opacity-0 animate-[fadeInUp_1s_ease-out_1s_forwards] mb-16">
+      <!-- Botón principal -->
       <a href="https://wa.me/5491138178449" target="_blank"
-        class="group relative overflow-hidden border border-black px-16 py-4 tracking-[0.4em] text-xs hover-lift gradient-border">
-        <span class="relative z-10 group-hover:text-white transition-colors duration-300">ESCRIBIR</span>
-        <div class="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+        class="group relative overflow-hidden border border-black px-14 md:px-20 py-4 
+               tracking-[0.35em] text-xs font-medium hover-lift transition-all duration-500
+               min-w-[280px] md:min-w-[300px] text-center">
+        <span class="relative z-10 group-hover:text-white transition-colors duration-300">
+          TRABAJEMOS JUNTOS
+        </span>
+        <div class="absolute inset-0 bg-black scale-x-0 group-hover:scale-x-100 
+                    origin-left transition-transform duration-500"></div>
       </a>
 
+      <!-- Botón secundario con línea -->
       <button onclick="openAbout()"
-        class="text-[11px] tracking-[0.4em] text-neutral-500 hover:text-gold transition-all duration-300 group">
-        <span class="group-hover:tracking-[0.5em] transition-all duration-300">SOBRE MÍ</span>
+        class="flex items-center gap-3 text-[11px] tracking-[0.4em] text-neutral-500 
+               hover:text-gold transition-all duration-300 group px-4 py-2">
+        <span class="group-hover:tracking-[0.5em] transition-all duration-300">CONOCER MÁS</span>
+        <svg class="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" 
+             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" 
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
       </button>
+    </div>
+
+    <!-- Indicador de scroll con más margen -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 
+                animate-[fadeIn_1.5s_ease-out_1.5s_forwards]">
+      <div class="flex flex-col items-center">
+        <div class="w-px h-20 bg-gradient-to-b from-gold/40 via-gold/20 to-transparent"></div>
+      </div>
     </div>
   </div>
 </section>
-
 
  <!-- PORTFOLIO -->
 <section id="portfolio" class="py-24 md:py-32 max-w-7xl mx-auto px-4 sm:px-6">
