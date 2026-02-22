@@ -88,101 +88,83 @@
   </div>
 </header>
 
-<!-- ================= HERO MEJORADO ================= -->
-<section id="inicio" class="relative min-h-[110vh] flex items-center justify-center pt-24 pb-20 px-6 overflow-hidden">
-  <!-- Fondo sutil con textura/grano -->
-  <div class="absolute inset-0 bg-beige">
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmFpbiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wMSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhaW4pIi8+PC9zdmc+')] opacity-30"></div>
+<!-- ================= HERO ELEGANTE Y SIMÉTRICO ================= -->
+<section id="inicio" class="relative min-h-screen flex items-center justify-center pt-24 pb-20 px-4 sm:px-6 overflow-hidden">
+  
+  <!-- Fondo más limpio y profesional -->
+  <div class="absolute inset-0 bg-gradient-to-b from-beige via-white to-beige/50">
+    <!-- Textura sutil solo en desktop -->
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmFpbiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wMSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhaW4pIi8+PC9zdmc+')] opacity-20 hidden md:block"></div>
   </div>
 
-  <!-- Elementos decorativos sutiles -->
-  <div class="absolute top-1/4 left-10 w-32 h-32 border border-gold/10 rotate-12 hidden lg:block"></div>
-  <div class="absolute bottom-1/4 right-10 w-40 h-40 border border-gold/5 -rotate-6 hidden lg:block"></div>
+  <!-- Elementos decorativos más sutiles y equilibrados -->
+  <div class="absolute top-20 left-5 lg:left-20 w-24 lg:w-40 h-24 lg:h-40 border border-gold/10 rounded-full"></div>
+  <div class="absolute bottom-20 right-5 lg:right-20 w-32 lg:w-48 h-32 lg:h-48 border border-gold/5 rounded-full"></div>
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold/3 rounded-full blur-3xl hidden lg:block"></div>
 
-  <div class="relative z-10 text-center max-w-4xl mx-auto w-full">
-    <!-- Logo con efecto de aparición suave - CENTRADO -->
-    <div class="flex justify-center items-center mb-8 md:mb-12">
-      <div class="relative flex justify-center">
-        <!-- Aura sutil detrás del logo -->
-        <div class="absolute inset-0 scale-125 bg-gold/5 blur-xl rounded-full"></div>
+  <div class="relative z-10 text-center max-w-5xl mx-auto w-full px-4">
+    
+    <!-- Logo centrado con tamaño perfecto en cada dispositivo -->
+    <div class="flex justify-center items-center mb-6 md:mb-8 lg:mb-10">
+      <div class="relative">
+        <!-- Aura más elegante -->
+        <div class="absolute inset-0 scale-150 bg-gold/5 blur-2xl rounded-full"></div>
         <img src="logo.png" 
              alt="Nazarena Mancino Logo" 
-             class="relative h-40 md:h-56 lg:h-72 w-auto object-contain mx-auto
-                    opacity-0 animate-[fadeInUp_1s_ease-out_0.2s_forwards] 
+             class="relative h-28 sm:h-32 md:h-40 lg:h-48 xl:h-56 w-auto object-contain mx-auto
+                    opacity-0 animate-[fadeIn_1s_ease-out_0.2s_forwards] 
                     hover:scale-105 transition-transform duration-700 cursor-pointer"
              onclick="openAbout()">
       </div>
     </div>
 
-    <!-- Línea decorativa -->
-    <div class="h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-10 
-                opacity-0 animate-[fadeIn_1s_ease-out_0.6s_forwards]"></div>
+    <!-- Línea decorativa más proporcionada -->
+    <div class="flex justify-center items-center gap-3 mb-8 md:mb-10 opacity-0 animate-[fadeIn_1s_ease-out_0.4s_forwards]">
+      <div class="w-12 md:w-16 h-px bg-gradient-to-l from-gold/30 to-transparent"></div>
+      <div class="w-16 md:w-24 h-px bg-gold/60"></div>
+      <div class="w-12 md:w-16 h-px bg-gradient-to-r from-gold/30 to-transparent"></div>
+    </div>
 
-   <!-- Claim mejorado -->
-<p class="text-neutral-700 text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed 
-          tracking-wider font-serif font-light italic mb-14 md:mb-16 px-4
-          opacity-0 animate-[fadeInUp_1s_ease-out_0.8s_forwards]">
-  Historias reales contadas en imágenes pensadas para 
-  <span class="text-gold font-normal not-italic relative">
-    conectar,
-    <span class="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-gold/50 to-transparent"></span>
-  </span>
-  <span class="text-gold font-normal not-italic relative">
-    emocionar y
-    <span class="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-gold/50 to-transparent"></span>
-  </span> 
-  <span class="text-gold font-normal not-italic relative">
-    permanecer en el tiempo.
-    <span class="absolute -bottom-1 left-0 w-0 group-hover:w-full h-px bg-gradient-to-r from-gold/50 to-transparent transition-all duration-500"></span>
-  </span>
-</p>
+    <!-- Claim con mejor espaciado y jerarquía -->
+    <div class="max-w-3xl mx-auto mb-12 md:mb-16 lg:mb-20 px-2 sm:px-4">
+      <p class="text-neutral-800 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 
+                leading-relaxed md:leading-relaxed lg:leading-relaxed 
+                tracking-wide md:tracking-wider 
+                font-serif font-light italic
+                opacity-0 animate-[fadeInUp_1s_ease-out_0.6s_forwards] space-y-2">
+        <span class="block">Historias reales contadas en imágenes</span>
+        <span class="block">pensadas para 
+          <span class="text-gold font-normal not-italic relative inline-block px-1">
+            conectar
+            <span class="absolute -bottom-1 left-0 w-full h-px bg-gold/40"></span>
+          </span>,
+          <span class="text-gold font-normal not-italic relative inline-block px-1">
+            emocionar
+            <span class="absolute -bottom-1 left-0 w-full h-px bg-gold/40"></span>
+          </span> y 
+          <span class="text-gold font-normal not-italic relative inline-block px-1">
+            permanecer
+            <span class="absolute -bottom-1 left-0 w-full h-px bg-gold/40"></span>
+          </span>
+        </span>
+        <span class="block">en el tiempo.</span>
+      </p>
+    </div>
 
-    <!-- Flecha indicadora -->
-    <div class="opacity-0 animate-[fadeIn_1s_ease-out_1.2s_forwards] mb-10">
-      <svg class="w-6 h-6 mx-auto text-gold/60 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+
+
+    <!-- Versión mobile del scroll (más pequeño) -->
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 
+                animate-[fadeIn_1.5s_ease-out_1.2s_forwards] md:hidden">
+      <svg class="w-4 h-4 text-gold/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
       </svg>
     </div>
 
-    <!-- Acciones con mejor jerarquía y más espacio -->
-    <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 
-                opacity-0 animate-[fadeInUp_1s_ease-out_1s_forwards] mb-16">
-      <!-- Botón principal -->
-      <a href="https://wa.me/5491138178449" target="_blank"
-        class="group relative overflow-hidden border border-black px-14 md:px-20 py-4 
-               tracking-[0.35em] text-xs font-medium hover-lift transition-all duration-500
-               min-w-[280px] md:min-w-[300px] text-center">
-        <span class="relative z-10 group-hover:text-white transition-colors duration-300">
-          TRABAJEMOS JUNTOS
-        </span>
-        <div class="absolute inset-0 bg-black scale-x-0 group-hover:scale-x-100 
-                    origin-left transition-transform duration-500"></div>
-      </a>
-
-      <!-- Botón secundario con línea -->
-      <button onclick="openAbout()"
-        class="flex items-center gap-3 text-[11px] tracking-[0.4em] text-neutral-500 
-               hover:text-gold transition-all duration-300 group px-4 py-2">
-        <span class="group-hover:tracking-[0.5em] transition-all duration-300">CONOCER MÁS</span>
-        <svg class="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" 
-             fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" 
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Indicador de scroll con más margen -->
-    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 
-                animate-[fadeIn_1.5s_ease-out_1.5s_forwards]">
-      <div class="flex flex-col items-center">
-        <div class="w-px h-20 bg-gradient-to-b from-gold/40 via-gold/20 to-transparent"></div>
-      </div>
-    </div>
   </div>
 </section>
 
- <!-- PORTFOLIO -->
+<!-- ================= PORTFOLIO ================= -->
 <section id="portfolio" class="py-24 md:py-32 max-w-7xl mx-auto px-4 sm:px-6">
 
   <!-- TÍTULO GENERAL -->
@@ -192,179 +174,300 @@
 
   <div class="section-divider opacity-0 animate-on-scroll delay-100"></div>
 
- <!-- ================= FAMILIAS & NIÑOS ================= -->
-<div class="mb-32 md:mb-48">
+  <!-- SOLAPAS DEL PORTFOLIO - SOLO SE ACTIVAN AL CLICKEAR -->
+  <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-16 md:mb-20 opacity-0 animate-on-scroll delay-200">
+    
+    <!-- Solapa 1 - Familias, bebés y niños -->
+    <button onclick="showCategory('familia')" 
+            class="tab-button px-6 md:px-10 py-4 border border-neutral-200 
+                   bg-white hover:border-gold/50 transition-all duration-300
+                   text-xs md:text-sm tracking-[0.2em] font-medium
+                   w-full sm:w-auto mx-2 sm:mx-0"
+            id="tab-familia">
+      FAMILIAS · BEBÉS · NIÑOS
+    </button>
 
-  <h3 class="font-serif text-3xl md:text-4xl mb-12 md:mb-16 text-center opacity-0 animate-on-scroll">
-    Familias & Niños
-  </h3>
+    <!-- Solapa 2 - Marcas gastronómicas -->
+    <button onclick="showCategory('marcas')" 
+            class="tab-button px-6 md:px-10 py-4 border border-neutral-200 
+                   bg-white hover:border-gold/50 transition-all duration-300
+                   text-xs md:text-sm tracking-[0.2em] font-medium
+                   w-full sm:w-auto mx-2 sm:mx-0"
+            id="tab-marcas">
+      MARCAS GASTRONÓMICAS
+    </button>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+    <!-- Solapa 3 - Maternidad -->
+    <button onclick="showCategory('maternidad')" 
+            class="tab-button px-6 md:px-10 py-4 border border-neutral-200 
+                   bg-white hover:border-gold/50 transition-all duration-300
+                   text-xs md:text-sm tracking-[0.2em] font-medium
+                   w-full sm:w-auto mx-2 sm:mx-0"
+            id="tab-maternidad">
+      MATERNIDAD
+    </button>
+  </div>
 
+ <!-- Categoría: Familias, bebés y niños -->
+<div id="category-familia" class="category-content hidden">
+  <div class="mb-12 text-center">
+    <h3 class="font-serif text-2xl md:text-3xl text-gold mb-3">
+      Familias, bebés y niños
+    </h3>
+    <p class="text-neutral-500 text-sm tracking-wider max-w-xl mx-auto">
+      Momentos auténticos · Emociones genuinas · Recuerdos eternos
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
     <!-- Imagen 1 -->
-    <div class="image-hover aspect-[4/5] bg-neutral-100 flex items-center justify-center opacity-0 animate-on-scroll delay-100">
-      <img
-        src="niño1.jpg"
-        alt="Fotografía familiar niño"
-        loading="lazy"
-        decoding="async"
-        class="max-h-full max-w-full object-contain"
-      >
+    <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4"
+         onclick="openLightbox('familia/familia1.jpeg', 'Sesión familiar')">
+      <img src="familia/familia1.jpeg" 
+           alt="Sesión de fotos familiar"
+           loading="lazy"
+           class="max-w-full max-h-full object-contain"
+           onerror="this.src='https://via.placeholder.com/800x1000?text=Foto+familiar+1'">
     </div>
 
     <!-- Imagen 2 -->
-    <div class="image-hover aspect-[4/5] bg-neutral-100 flex items-center justify-center opacity-0 animate-on-scroll delay-200">
-      <img
-        src="niño2.jpg"
-        alt="Book fotográfico infantil"
-        loading="lazy"
-        decoding="async"
-        class="max-h-full max-w-full object-contain"
-      >
+    <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4"
+         onclick="openLightbox('familia/familia2.jpeg', 'Sesión de bebé')">
+      <img src="familia/familia2.jpeg" 
+           alt="Sesión de fotos de bebé"
+           loading="lazy"
+           class="max-w-full max-h-full object-contain"
+           onerror="this.src='https://via.placeholder.com/800x1000?text=Foto+bebé+2'">
     </div>
 
     <!-- Imagen 3 -->
-    <div class="image-hover aspect-[4/5] bg-neutral-100 flex items-center justify-center opacity-0 animate-on-scroll delay-300">
-      <img
-        src="niño3.jpg"
-        alt="Retrato editorial infantil"
-        loading="lazy"
-        decoding="async"
-        class="max-h-full max-w-full object-contain"
-      >
+    <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4"
+         onclick="openLightbox('familia/familia3.jpeg', 'Sesión de niños')">
+      <img src="familia/familia3.jpeg" 
+           alt="Sesión de fotos de niños"
+           loading="lazy"
+           class="max-w-full max-h-full object-contain"
+           onerror="this.src='https://via.placeholder.com/800x1000?text=Foto+niños+3'">
     </div>
-
   </div>
 </div>
 
-
-
-
-<!-- ================= MARCAS / FOTOGRAFÍA ================= -->
-<div class="mb-28 md:mb-36">
-
-    <h3 class="font-serif text-3xl md:text-4xl mb-12 md:mb-16 text-center opacity-0 animate-on-scroll">
-    Marcas
-  </h3>
-
-  <div class="subtitle-line mb-10 md:mb-12 opacity-0 animate-on-scroll">
-    <h4 class="text-xs tracking-[0.45em] uppercase text-neutral-500">
-      Fotografía
-    </h4>
+<!-- Categoría: Marcas gastronómicas -->
+<div id="category-marcas" class="category-content hidden">
+  <div class="mb-12 text-center">
+    <h3 class="font-serif text-2xl md:text-3xl text-gold mb-3">
+      Marcas gastronómicas
+    </h3>
+    <p class="text-neutral-500 text-sm tracking-wider max-w-xl mx-auto">
+      Food styling · Fotografía de producto · Contenido para redes
+    </p>
   </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
-
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
     <!-- Imagen 1 -->
-    <div class="image-hover aspect-[4/5] bg-neutral-100 flex items-center justify-center opacity-0 animate-on-scroll delay-100">
-      <img
-        src="marcas1.jpg"
-        alt="Fotografía de producto"
-        loading="lazy"
-        decoding="async"
-        class="max-h-full max-w-full object-contain"
-      >
+    <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4 aspect-[4/5]"
+         onclick="openLightbox('marcas/marcas1.jpeg', 'Fotografía gastronómica')">
+      <img src="marcas/marcas1.jpeg" 
+           alt="Fotografía gastronómica"
+           loading="lazy"
+           class="max-w-full max-h-full object-contain"
+           onerror="this.src='https://via.placeholder.com/800x1000?text=Marca+gastro+1'">
     </div>
 
     <!-- Imagen 2 -->
-    <div class="image-hover aspect-[4/5] bg-neutral-100 flex items-center justify-center opacity-0 animate-on-scroll delay-200">
-      <img
-        src="marcas2.jpg"
-        alt="Fotografía de marca"
-        loading="lazy"
-        decoding="async"
-        class="max-h-full max-w-full object-contain"
-      >
+    <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4 aspect-[4/5]"
+         onclick="openLightbox('marcas/marcas2.jpeg', 'Food styling')">
+      <img src="marcas/marcas2.jpeg" 
+           alt="Food styling"
+           loading="lazy"
+           class="max-w-full max-h-full object-contain"
+           onerror="this.src='https://via.placeholder.com/800x1000?text=Marca+gastro+2'">
     </div>
-
-    <!-- Imagen 3 -->
-    <div class="image-hover aspect-[4/5] bg-neutral-100 flex items-center justify-center opacity-0 animate-on-scroll delay-300">
-      <img
-        src="marcas3.jpg"
-        alt="Editorial de marca"
-        loading="lazy"
-        decoding="async"
-        class="max-h-full max-w-full object-contain"
-      >
-    </div>
-
   </div>
 </div>
 
-
-
-    <!-- CONTENIDO VISUAL -->
-    <div>
-
-      <div class="subtitle-line mb-10 md:mb-12 opacity-0 animate-on-scroll">
-        <h4 class="text-xs tracking-[0.45em] uppercase text-neutral-500">
-          Contenido visual
-        </h4>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-
-        <!-- Video -->
-        <div class="aspect-[9/16] bg-black opacity-0 animate-on-scroll delay-100">
-          <video class="w-full h-full object-cover"
-                 controls
-                 preload="none"
-                 playsinline
-                 poster="marcasvideo1.jpg">
-            <source src="marcasvideo1.mp4" type="video/mp4">
-          </video>
-        </div>
-
-        <div class="aspect-[9/16] bg-black opacity-0 animate-on-scroll delay-200">
-          <video class="w-full h-full object-cover"
-                 controls
-                 preload="none"
-                 playsinline
-                 poster="marcasvideo2.jpg">
-            <source src="marcasvideo2.mp4" type="video/mp4">
-          </video>
-        </div>
-
-      </div>
+  <!-- Categoría: Maternidad -->
+  <div id="category-maternidad" class="category-content hidden">
+    <div class="mb-12 text-center">
+      <h3 class="font-serif text-2xl md:text-3xl text-gold mb-3">
+        Maternidad
+      </h3>
+      <p class="text-neutral-500 text-sm tracking-wider max-w-xl mx-auto">
+        La belleza de la espera · Vínculo sagrado · Luz y ternura
+      </p>
     </div>
 
+    <!-- Estado "próximamente" -->
+    <div class="flex flex-col items-center justify-center py-16 px-4 bg-beige/30 rounded-sm">
+      <div class="w-24 h-24 rounded-full bg-beige flex items-center justify-center mb-6">
+        <svg class="w-12 h-12 text-gold/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" 
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+      </div>
+      <h4 class="font-serif text-xl text-neutral-600 mb-2">Próximamente</h4>
+      <p class="text-neutral-400 text-sm max-w-md text-center">
+        Estoy preparando una selección especial de sesiones de maternidad. 
+        Muy pronto podrás verlas aquí.
+      </p>
+      
+      <!-- Botón para contactar -->
+      <a href="#contacto" 
+         class="mt-8 text-xs tracking-[0.3em] uppercase border-b border-gold/30 
+                pb-1 text-gold hover:text-gold/70 transition-colors duration-300">
+        Consultar disponibilidad
+      </a>
+    </div>
   </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightboxModal" class="hidden fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4" onclick="closeLightbox(event)">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white/70 hover:text-white text-3xl z-10 transition-colors duration-300">
+      ✕
+    </button>
+    
+    <div class="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center">
+      <img id="lightboxImage" src="" alt="" class="max-w-full max-h-[90vh] object-contain">
+    </div>
+    
+    <div id="lightboxCaption" class="absolute bottom-6 left-0 right-0 text-center text-white/70 text-sm tracking-wider">
+    </div>
+  </div>
+
 </section>
 
 
 
 <!-- ================= CONTACTO ================= -->
-<section id="contacto" class="py-32 text-center border-t bg-beige">
-  <div class="max-w-4xl mx-auto px-6">
-    <h2 class="font-serif text-4xl md:text-5xl mb-10 opacity-0 animate-on-scroll">
-      Contacto
-    </h2>
+<section id="contacto" class="py-32 text-center border-t bg-beige relative overflow-hidden">
+  
+  <!-- Elementos decorativos sutiles -->
+  <div class="absolute top-20 left-10 w-32 h-32 border border-gold/5 rotate-12 hidden lg:block"></div>
+  <div class="absolute bottom-20 right-10 w-40 h-40 border border-gold/5 -rotate-6 hidden lg:block"></div>
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold/3 rounded-full blur-3xl"></div>
+  
+  <div class="max-w-4xl mx-auto px-6 relative z-10">
     
-    <p class="text-neutral-700 text-lg mb-8 opacity-0 animate-on-scroll delay-100">
-      Hablemos de tu proyecto
+    <!-- Título con línea decorativa -->
+    <div class="mb-12 opacity-0 animate-on-scroll">
+      <span class="text-gold text-sm tracking-[0.4em] uppercase block mb-4">· Conectemos ·</span>
+      <h2 class="font-serif text-4xl md:text-5xl mb-6">
+        Contacto
+      </h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    
+    <!-- Descripción más atractiva -->
+    <p class="text-neutral-700 text-lg md:text-xl mb-12 opacity-0 animate-on-scroll delay-100 max-w-2xl mx-auto leading-relaxed">
+      ¿Tenés un proyecto en mente? ¿Querés trabajar juntos o simplemente saludar? 
+      <span class="text-gold font-medium">Me encantaría escucharte.</span>
     </p>
     
-    <div class="mb-16 opacity-0 animate-on-scroll delay-200">
-      <p class="text-neutral-600 mb-4">
-        Instagram: 
-        <a href="https://instagram.com/nm.estudio" target="_blank" 
-           class="font-semibold text-black hover:text-gold transition duration-300">
-          @nm.estudio
+    <!-- TARJETA DE CONTACTO PRINCIPAL -->
+    <div class="bg-white p-8 md:p-12 shadow-sm mb-16 opacity-0 animate-on-scroll delay-200
+                border border-neutral-100 hover:shadow-md transition-shadow duration-500">
+      
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+        
+        <!-- Columna izquierda - Información -->
+        <div class="text-left">
+          <h3 class="font-serif text-2xl mb-6 text-gold">Información</h3>
+          
+          <!-- Instagram mejorado -->
+          <div class="flex items-center gap-4 mb-6 group">
+            <div class="w-12 h-12 bg-beige rounded-full flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-300">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-xs tracking-[0.2em] text-neutral-400 block mb-1">INSTAGRAM</span>
+              <a href="https://instagram.com/nm.estudio" target="_blank" 
+                 class="text-lg font-medium text-black hover:text-gold transition-colors duration-300">
+                @nm.estudio
+              </a>
+            </div>
+          </div>
+          
+          <!-- Email (agregado para más profesionalismo) -->
+          <div class="flex items-center gap-4 mb-6 group">
+            <div class="w-12 h-12 bg-beige rounded-full flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-300">
+              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-xs tracking-[0.2em] text-neutral-400 block mb-1">EMAIL</span>
+              <a href="mailto:nmestudio2026@gmail.com" 
+                 class="text-lg font-medium text-black hover:text-gold transition-colors duration-300">
+                nmestudio2026@gmail.com
+              </a>
+            </div>
+          </div>
+          
+ 
+        </div>
+        
+        <!-- Columna derecha - Horarios o mensaje -->
+        <div class="text-left border-l border-neutral-200 pl-8 md:pl-12">
+          <h3 class="font-serif text-2xl mb-6 text-gold">Respondo en</h3>
+          
+          <div class="space-y-4 mb-8">
+            <div class="flex justify-between items-center border-b border-neutral-100 pb-3">
+              <span class="text-neutral-600">Lunes a Viernes</span>
+              <span class="font-medium">9:00 - 18:00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-neutral-100 pb-3">
+              <span class="text-neutral-600">Sábados</span>
+              <span class="font-medium">10:00 - 14:00</span>
+            </div>
+          </div>
+          
+          <!-- Mensaje personal -->
+          <p class="text-neutral-500 text-sm italic">
+            "Cada proyecto es único y merece atención personalizada. 
+            Respondo personalmente todos los mensajes."
+          </p>
+          
+          <!-- Firma -->
+          <div class="mt-6 font-serif text-gold text-lg">
+            — Nazarena
+          </div>
+        </div>
+      </div>
+      
+      <!-- Línea decorativa -->
+      <div class="my-8 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent"></div>
+      
+      <!-- Botones de acción -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4">
+   
+        
+        <a href="mailto:hola@nmestudio.com"
+           class="group flex items-center gap-2 text-xs tracking-[0.35em] text-neutral-600 
+                  hover:text-gold transition-colors duration-300 border-b border-transparent 
+                  hover:border-gold/30 pb-1">
+          <span>ENVIAR EMAIL</span>
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
+               fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+          </svg>
         </a>
-      </p>
-      <p class="text-neutral-600">
-        WhatsApp: 
-        <a href="https://wa.me/5491138178449" target="_blank"
-           class="font-semibold text-black hover:text-gold transition duration-300">
-          +54 9 11 3817-8449
-        </a>
-      </p>
+      </div>
     </div>
-
-    <a href="https://wa.me/5491138178449" target="_blank"
-      class="inline-block border border-black px-12 py-4 tracking-[0.35em] text-xs hover-lift gradient-border hover:bg-black hover:text-white transition-all duration-300 opacity-0 animate-on-scroll delay-300">
-      ESCRIBIR POR WHATSAPP
-    </a>
+    
+    <!-- Redes sociales adicionales (opcional) -->
+    <div class="flex justify-center gap-6 opacity-0 animate-on-scroll delay-300">
+      <a href="https://instagram.com/nm.estudio" target="_blank" 
+         class="text-neutral-400 hover:text-gold transition-colors duration-300">
+        <span class="sr-only">Instagram</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
+        </svg>
+      </a>
+      <!-- Puedes agregar más redes si las tienes -->
+    </div>
+    
   </div>
 </section>
 
@@ -385,7 +488,7 @@
     <div class="grid md:grid-cols-2 gap-8 p-8 md:p-12">
       <!-- Foto -->
       <div class="image-hover h-64 md:h-full">
-        <img src="foto1.jpeg" alt="Nazarena Mancino" class="w-full h-full object-cover">
+        <img src="NazarenaMancino.jpeg" alt="Nazarena Mancino" class="w-full h-full object-cover">
       </div>
 
       <!-- Texto -->

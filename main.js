@@ -69,3 +69,97 @@ document.addEventListener('keydown', e => {
 document.getElementById('aboutModal').addEventListener('click', e => {
   if (e.target.id === 'aboutModal') closeAbout();
 });
+
+
+// ================= PORTFOLIO TABS - SOLO AL CLICKEAR =================
+let currentCategory = null;
+
+function showCategory(category) {
+  // Ocultar TODAS las categorías primero
+  document.querySelectorAll('.category-content').forEach(el => {
+    el.classList.add('hidden');
+    el.classList.remove('active', 'visible');
+  });
+  
+  // Remover clase activa de TODAS las solapas
+  document.querySelectorAll('.tab-button').forEach(btn => {
+    btn.classList.remove('active', 'bg-gold/5', 'border-gold', 'text-gold');
+    btn.style.backgroundColor = '';
+    btn.style.borderColor = '';
+    btn.style.color = '';
+  });
+  
+  // Mostrar SOLO la categoría seleccionada
+  const selectedCategory = document.getElementById(`category-${category}`);
+  if (selectedCategory) {
+    selectedCategory.classList.remove('hidden');
+    selectedCategory.classList.add('active');
+    
+    // Animar los elementos dentro de la categoría
+    setTimeout(() => {
+      selectedCategory.querySelectorAll('.image-hover').forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+          el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+    }, 50);
+    
+    currentCategory = category;
+  }
+  
+  // Activar visualmente la solapa clickeada
+  const activeTab = document.getElementById(`tab-${category}`);
+  if (activeTab) {
+    activeTab.classList.add('active', 'border-gold', 'text-gold');
+    activeTab.style.backgroundColor = 'rgba(198, 164, 90, 0.05)';
+  }
+}
+
+// ================= LIGHTBOX =================
+function openLightbox(imageSrc, caption) {
+  const modal = document.getElementById('lightboxModal');
+  const img = document.getElementById('lightboxImage');
+  const captionEl = document.getElementById('lightboxCaption');
+  
+  img.src = imageSrc;
+  img.alt = caption;
+  captionEl.textContent = caption;
+  
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(event) {
+  if (event && event.target.id !== 'lightboxModal' && event.target.id !== 'lightboxImage' && event.target.tagName !== 'BUTTON') {
+    return;
+  }
+  
+  const modal = document.getElementById('lightboxModal');
+  modal.classList.add('hidden');
+  document.body.style.overflow = 'auto';
+}
+
+// Cerrar lightbox con ESC
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeLightbox();
+  }
+});
+
+// NO mostrar ninguna categoría al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+  // Asegurar que todas las categorías estén ocultas al inicio
+  document.querySelectorAll('.category-content').forEach(el => {
+    el.classList.add('hidden');
+  });
+  
+  // Quitar cualquier estilo activo de las solapas
+  document.querySelectorAll('.tab-button').forEach(btn => {
+    btn.classList.remove('active', 'bg-gold/5', 'border-gold', 'text-gold');
+  });
+});
