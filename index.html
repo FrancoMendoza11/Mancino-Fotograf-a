@@ -97,11 +97,6 @@
     <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmFpbiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wMSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhaW4pIi8+PC9zdmc+')] opacity-20 hidden md:block"></div>
   </div>
 
-  <!-- Elementos decorativos más sutiles y equilibrados -->
-  <div class="absolute top-20 left-5 lg:left-20 w-24 lg:w-40 h-24 lg:h-40 border border-gold/10 rounded-full"></div>
-  <div class="absolute bottom-20 right-5 lg:right-20 w-32 lg:w-48 h-32 lg:h-48 border border-gold/5 rounded-full"></div>
-  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold/3 rounded-full blur-3xl hidden lg:block"></div>
-
   <div class="relative z-10 text-center max-w-5xl mx-auto w-full px-4">
     
     <!-- Logo centrado con tamaño perfecto en cada dispositivo -->
@@ -197,7 +192,17 @@
       MARCAS GASTRONÓMICAS
     </button>
 
-    <!-- Solapa 3 - Maternidad -->
+    <!-- Solapa 3 - Marcas/Emprendimientos (NUEVA) -->
+    <button onclick="showCategory('emprendimientos')" 
+            class="tab-button px-6 md:px-10 py-4 border border-neutral-200 
+                   bg-white hover:border-gold/50 transition-all duration-300
+                   text-xs md:text-sm tracking-[0.2em] font-medium
+                   w-full sm:w-auto mx-2 sm:mx-0"
+            id="tab-emprendimientos">
+      MARCAS · EMPRENDIMIENTOS
+    </button>
+
+    <!-- Solapa 4 - Maternidad -->
     <button onclick="showCategory('maternidad')" 
             class="tab-button px-6 md:px-10 py-4 border border-neutral-200 
                    bg-white hover:border-gold/50 transition-all duration-300
@@ -208,85 +213,109 @@
     </button>
   </div>
 
- <!-- Categoría: Familias, bebés y niños -->
-<div id="category-familia" class="category-content hidden">
-  <div class="mb-12 text-center">
-    <h3 class="font-serif text-2xl md:text-3xl text-gold mb-3">
-      Familias, bebés y niños
-    </h3>
-    <p class="text-neutral-500 text-sm tracking-wider max-w-xl mx-auto">
-      Momentos auténticos · Emociones genuinas · Recuerdos eternos
-    </p>
-  </div>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-    <!-- Imagen 1 -->
-    <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4"
-         onclick="openLightbox('familia/familia1.jpeg', 'Sesión familiar')">
-      <img src="familia/familia1.jpeg" 
-           alt="Sesión de fotos familiar"
-           loading="lazy"
-           class="max-w-full max-h-full object-contain"
-           onerror="this.src='https://via.placeholder.com/800x1000?text=Foto+familiar+1'">
+  <!-- Categoría: Familias, bebés y niños -->
+  <div id="category-familia" class="category-content hidden">
+    <div class="mb-12 text-center">
+      <h3 class="font-serif text-2xl md:text-3xl text-gold mb-3">
+        Familias, bebés y niños
+      </h3>
+      <p class="text-neutral-500 text-sm tracking-wider max-w-xl mx-auto">
+        Momentos auténticos · Emociones genuinas · Recuerdos eternos
+      </p>
     </div>
 
-    <!-- Imagen 2 -->
-    <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4"
-         onclick="openLightbox('familia/familia2.jpeg', 'Sesión de bebé')">
-      <img src="familia/familia2.jpeg" 
-           alt="Sesión de fotos de bebé"
-           loading="lazy"
-           class="max-w-full max-h-full object-contain"
-           onerror="this.src='https://via.placeholder.com/800x1000?text=Foto+bebé+2'">
-    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <!-- Imagen 1 -->
+      <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4"
+           onclick="openLightbox('familia/familia1.jpeg', 'Sesión familiar')">
+        <img src="familia/familia1.jpeg" 
+             alt="Sesión de fotos familiar"
+             loading="lazy"
+             class="max-w-full max-h-full object-contain"
+             onerror="this.src='https://via.placeholder.com/800x1000?text=Foto+familiar+1'">
+      </div>
 
-    <!-- Imagen 3 -->
-    <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4"
-         onclick="openLightbox('familia/familia3.jpeg', 'Sesión de niños')">
-      <img src="familia/familia3.jpeg" 
-           alt="Sesión de fotos de niños"
-           loading="lazy"
-           class="max-w-full max-h-full object-contain"
-           onerror="this.src='https://via.placeholder.com/800x1000?text=Foto+niños+3'">
-    </div>
-  </div>
-</div>
+      <!-- Imagen 2 -->
+      <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4"
+           onclick="openLightbox('familia/familia2.jpeg', 'Sesión de bebé')">
+        <img src="familia/familia2.jpeg" 
+             alt="Sesión de fotos de bebé"
+             loading="lazy"
+             class="max-w-full max-h-full object-contain"
+             onerror="this.src='https://via.placeholder.com/800x1000?text=Foto+bebé+2'">
+      </div>
 
-<!-- Categoría: Marcas gastronómicas -->
-<div id="category-marcas" class="category-content hidden">
-  <div class="mb-12 text-center">
-    <h3 class="font-serif text-2xl md:text-3xl text-gold mb-3">
-      Marcas gastronómicas
-    </h3>
-    <p class="text-neutral-500 text-sm tracking-wider max-w-xl mx-auto">
-      Food styling · Fotografía de producto · Contenido para redes
-    </p>
-  </div>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
-    <!-- Imagen 1 -->
-    <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4 aspect-[4/5]"
-         onclick="openLightbox('marcas/marcas1.jpeg', 'Fotografía gastronómica')">
-      <img src="marcas/marcas1.jpeg" 
-           alt="Fotografía gastronómica"
-           loading="lazy"
-           class="max-w-full max-h-full object-contain"
-           onerror="this.src='https://via.placeholder.com/800x1000?text=Marca+gastro+1'">
-    </div>
-
-    <!-- Imagen 2 -->
-    <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4 aspect-[4/5]"
-         onclick="openLightbox('marcas/marcas2.jpeg', 'Food styling')">
-      <img src="marcas/marcas2.jpeg" 
-           alt="Food styling"
-           loading="lazy"
-           class="max-w-full max-h-full object-contain"
-           onerror="this.src='https://via.placeholder.com/800x1000?text=Marca+gastro+2'">
+      <!-- Imagen 3 -->
+      <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4"
+           onclick="openLightbox('familia/familia3.jpeg', 'Sesión de niños')">
+        <img src="familia/familia3.jpeg" 
+             alt="Sesión de fotos de niños"
+             loading="lazy"
+             class="max-w-full max-h-full object-contain"
+             onerror="this.src='https://via.placeholder.com/800x1000?text=Foto+niños+3'">
+      </div>
     </div>
   </div>
-</div>
 
-  <!-- Categoría: Maternidad -->
+  <!-- Categoría: Marcas gastronómicas -->
+  <div id="category-marcas" class="category-content hidden">
+    <div class="mb-12 text-center">
+      <h3 class="font-serif text-2xl md:text-3xl text-gold mb-3">
+        Marcas gastronómicas
+      </h3>
+      <p class="text-neutral-500 text-sm tracking-wider max-w-xl mx-auto">
+        Food styling · Fotografía de producto · Contenido para redes
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
+      <!-- Imagen 1 -->
+      <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4 aspect-[4/5]"
+           onclick="openLightbox('marcas/marcas1.jpeg', 'Fotografía gastronómica')">
+        <img src="marcas/marcas1.jpeg" 
+             alt="Fotografía gastronómica"
+             loading="lazy"
+             class="max-w-full max-h-full object-contain"
+             onerror="this.src='https://via.placeholder.com/800x1000?text=Marca+gastro+1'">
+      </div>
+
+      <!-- Imagen 2 -->
+      <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4 aspect-[4/5]"
+           onclick="openLightbox('marcas/marcas2.jpeg', 'Food styling')">
+        <img src="marcas/marcas2.jpeg" 
+             alt="Food styling"
+             loading="lazy"
+             class="max-w-full max-h-full object-contain"
+             onerror="this.src='https://via.placeholder.com/800x1000?text=Marca+gastro+2'">
+      </div>
+    </div>
+  </div>
+
+  <!-- Categoría: Marcas/Emprendimientos (NUEVA) -->
+  <div id="category-emprendimientos" class="category-content hidden">
+    <div class="mb-12 text-center">
+      <h3 class="font-serif text-2xl md:text-3xl text-gold mb-3">
+        Marcas · Emprendimientos
+      </h3>
+      <p class="text-neutral-500 text-sm tracking-wider max-w-xl mx-auto">
+        Identidad visual · Contenido para redes · Branding
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <!-- Imagen 1 -->
+      <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4"
+           onclick="openLightbox('emprendimientos/emprendimientos1.jpeg', 'Fotografía para emprendimientos')">
+        <img src="emprendimientos/emprendimientos1.jpeg" 
+             alt="Fotografía para emprendimientos"
+             loading="lazy"
+             class="max-w-full max-h-full object-contain"
+             onerror="this.src='https://via.placeholder.com/800x1000?text=Emprendimiento+1'">
+      </div>
+    </div>
+  </div>
+
+  <!-- Categoría: Maternidad (ACTUALIZADA con imágenes) -->
   <div id="category-maternidad" class="category-content hidden">
     <div class="mb-12 text-center">
       <h3 class="font-serif text-2xl md:text-3xl text-gold mb-3">
@@ -297,26 +326,26 @@
       </p>
     </div>
 
-    <!-- Estado "próximamente" -->
-    <div class="flex flex-col items-center justify-center py-16 px-4 bg-beige/30 rounded-sm">
-      <div class="w-24 h-24 rounded-full bg-beige flex items-center justify-center mb-6">
-        <svg class="w-12 h-12 text-gold/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" 
-                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-        </svg>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
+      <!-- Imagen 1 -->
+      <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4 aspect-[4/5]"
+           onclick="openLightbox('maternidad/maternidad1.jpeg', 'Sesión de maternidad')">
+        <img src="maternidad/maternidad1.jpeg" 
+             alt="Sesión de maternidad"
+             loading="lazy"
+             class="max-w-full max-h-full object-contain"
+             onerror="this.src='https://via.placeholder.com/800x1000?text=Maternidad+1'">
       </div>
-      <h4 class="font-serif text-xl text-neutral-600 mb-2">Próximamente</h4>
-      <p class="text-neutral-400 text-sm max-w-md text-center">
-        Estoy preparando una selección especial de sesiones de maternidad. 
-        Muy pronto podrás verlas aquí.
-      </p>
-      
-      <!-- Botón para contactar -->
-      <a href="#contacto" 
-         class="mt-8 text-xs tracking-[0.3em] uppercase border-b border-gold/30 
-                pb-1 text-gold hover:text-gold/70 transition-colors duration-300">
-        Consultar disponibilidad
-      </a>
+
+      <!-- Imagen 2 -->
+      <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4 aspect-[4/5]"
+           onclick="openLightbox('maternidad/maternidad2.jpeg', 'Sesión de maternidad')">
+        <img src="maternidad/maternidad2.jpeg" 
+             alt="Sesión de maternidad"
+             loading="lazy"
+             class="max-w-full max-h-full object-contain"
+             onerror="this.src='https://via.placeholder.com/800x1000?text=Maternidad+2'">
+      </div>
     </div>
   </div>
 
@@ -359,7 +388,7 @@
     
     <!-- Descripción más atractiva -->
     <p class="text-neutral-700 text-lg md:text-xl mb-12 opacity-0 animate-on-scroll delay-100 max-w-2xl mx-auto leading-relaxed">
-      ¿Tenés un proyecto en mente? ¿Querés trabajar juntos o simplemente saludar? 
+      ¿Querés tener bellos recuerdos plamados en imágenes o impulsar tu marca?
       <span class="text-gold font-medium">Me encantaría escucharte.</span>
     </p>
     
@@ -439,33 +468,6 @@
       <!-- Línea decorativa -->
       <div class="my-8 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent"></div>
       
-      <!-- Botones de acción -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4">
-   
-        
-        <a href="mailto:hola@nmestudio.com"
-           class="group flex items-center gap-2 text-xs tracking-[0.35em] text-neutral-600 
-                  hover:text-gold transition-colors duration-300 border-b border-transparent 
-                  hover:border-gold/30 pb-1">
-          <span>ENVIAR EMAIL</span>
-          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
-               fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-    
-    <!-- Redes sociales adicionales (opcional) -->
-    <div class="flex justify-center gap-6 opacity-0 animate-on-scroll delay-300">
-      <a href="https://instagram.com/nm.estudio" target="_blank" 
-         class="text-neutral-400 hover:text-gold transition-colors duration-300">
-        <span class="sr-only">Instagram</span>
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
-        </svg>
-      </a>
-      <!-- Puedes agregar más redes si las tienes -->
     </div>
     
   </div>
@@ -479,51 +481,56 @@
 </footer>
 
 <!-- ================= MODAL SOBRE MÍ ================= -->
-<div id="aboutModal" class="hidden fixed inset-0 z-50 modal-overlay flex items-center justify-center p-4">
-  <div class="bg-white max-w-4xl w-full modal-content relative">
-    <button onclick="closeAbout()" class="absolute top-4 right-4 text-2xl text-neutral-400 hover:text-black transition duration-300 z-10">
+<div id="aboutModal" class="hidden fixed inset-0 z-50 modal-overlay flex items-center justify-center p-2 sm:p-4 overflow-y-auto">
+  <div class="bg-white max-w-4xl w-full modal-content relative my-2 sm:my-0">
+    <button onclick="closeAbout()" class="absolute top-2 right-2 sm:top-4 sm:right-4 text-2xl text-neutral-400 hover:text-black hover:bg-neutral-100 transition duration-300 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm shadow-md">
       ✕
     </button>
     
-    <div class="grid md:grid-cols-2 gap-8 p-8 md:p-12">
-      <!-- Foto -->
-      <div class="image-hover h-64 md:h-full">
-        <img src="NazarenaMancino.jpeg" alt="Nazarena Mancino" class="w-full h-full object-cover">
+    <div class="flex flex-col md:grid md:grid-cols-2 gap-0 md:gap-6 lg:gap-8">
+      <!-- Foto - rediseñada para mobile -->
+      <div class="w-full md:h-full">
+        <img src="nazarenamancino.png" 
+             alt="Nazarena Mancino" 
+             class="w-full h-64 sm:h-72 md:h-full object-cover object-center"
+             loading="lazy">
       </div>
 
-      <!-- Texto -->
-      <div>
-        <h2 class="font-serif text-3xl mb-4 text-gold">Nazarena Mancino</h2>
-        <p class="mb-6 text-neutral-700 text-lg">Soy fotógrafa y creadora visual.</p>
+      <!-- Texto - con scroll suave -->
+      <div class="p-5 sm:p-6 md:p-8 lg:p-10 overflow-y-auto max-h-[50vh] md:max-h-[70vh]">
+        <h2 class="font-serif text-2xl sm:text-3xl mb-2 text-gold">Nazarena Mancino</h2>
+        <p class="mb-4 text-neutral-700 text-base sm:text-lg">Soy fotógrafa y creadora visual.</p>
 
-        <h3 class="font-serif text-xl mb-4 text-black">Formación</h3>
-        <ul class="space-y-3 text-neutral-700">
-          <li class="flex items-start">
-            <span class="text-gold mr-2">•</span>
-            <span>Fotografía e Iluminación Profesional — Motivarte</span>
+        <h3 class="font-serif text-lg sm:text-xl mb-3 text-black border-b border-gold/20 pb-2 inline-block">Formación</h3>
+        
+        <ul class="space-y-3 mt-4 text-sm sm:text-base text-neutral-700">
+          <li class="flex items-start gap-3">
+            <span class="text-gold font-bold text-lg leading-5">•</span>
+            <span class="flex-1">Fotografía e Iluminación Profesional — Motivarte</span>
           </li>
-          <li class="flex items-start">
-            <span class="text-gold mr-2">•</span>
-            <span>Tecnicatura en Marketing — Universidad FASTA</span>
+          <li class="flex items-start gap-3">
+            <span class="text-gold font-bold text-lg leading-5">•</span>
+            <span class="flex-1">Tecnicatura en Marketing — Universidad FASTA</span>
           </li>
-          <li class="flex items-start">
-            <span class="text-gold mr-2">•</span>
-            <span>Community Manager & Social Media Manager</span>
+          <li class="flex items-start gap-3">
+            <span class="text-gold font-bold text-lg leading-5">•</span>
+            <span class="flex-1">Community Manager & Social Media Manager</span>
           </li>
-          <li class="flex items-start">
-            <span class="text-gold mr-2">•</span>
-            <span>Copywriting: escribir para vender</span>
+          <li class="flex items-start gap-3">
+            <span class="text-gold font-bold text-lg leading-5">•</span>
+            <span class="flex-1">Copywriting: escribir para vender</span>
           </li>
-          <li class="flex items-start">
-            <span class="text-gold mr-2">•</span>
-            <span>Marca personal para emprendedoras</span>
+          <li class="flex items-start gap-3">
+            <span class="text-gold font-bold text-lg leading-5">•</span>
+            <span class="flex-1">Marca personal para emprendedoras</span>
           </li>
         </ul>
 
-        <div class="mt-10 pt-6 border-t border-neutral-200">
-          <p class="text-neutral-600 text-sm">
-            Con más de 5 años de experiencia creando contenido visual para marcas y personas, mi objetivo es ayudarte a transmitir tu esencia de forma auténtica y profesional.
+        <div class="mt-6 pt-5 border-t border-neutral-200">
+          <p class="text-neutral-600 text-xs sm:text-sm leading-relaxed italic">
+            "Con más de 5 años de experiencia creando contenido visual para marcas y personas, mi objetivo es ayudarte a transmitir tu esencia de forma auténtica y profesional."
           </p>
+          <p class="text-gold font-serif text-right mt-2 text-sm">— Nazarena</p>
         </div>
       </div>
     </div>
