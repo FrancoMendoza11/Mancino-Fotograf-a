@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Nazarena Mancino — Estudio Creativo</title>
+  <title>Nazarena Mancino — Fotografia Profesional</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contenido, fotografía y estética para marcas que quieren verse profesionales, coherentes y auténticas.">
 
@@ -37,7 +37,7 @@
 
 <!-- ================= LOADER ================= -->
 <div class="loader" id="loader">
-  <img src="logo.png" alt="Nazarena Mancino Estudio Creativo" class="loader-logo">
+  <img src="logo.png" alt="Nazarena Mancino Fotografía Profesional" class="loader-logo">
 </div>
 
 <!-- ================= NAV ================= -->
@@ -51,7 +51,7 @@
           Nazarena Mancino
         </div>
         <div class="text-[10px] tracking-[0.4em] text-neutral-500 uppercase">
-          Estudio Creativo
+          Fotografia Profesional
         </div>
       </div>
     </div>
@@ -211,6 +211,16 @@
             id="tab-maternidad">
       MATERNIDAD
     </button>
+
+    <!-- Solapa 5 - Cobertura de Eventos -->
+    <button onclick="showCategory('eventos')" 
+            class="tab-button px-6 md:px-10 py-4 border border-neutral-200 
+                   bg-white hover:border-gold/50 transition-all duration-300
+                   text-xs md:text-sm tracking-[0.2em] font-medium
+                   w-full sm:w-auto mx-2 sm:mx-0"
+            id="tab-eventos">
+      COBERTURA DE EVENTOS
+    </button>
   </div>
 
   <!-- Categoría: Familias, bebés y niños -->
@@ -366,6 +376,26 @@
          onerror="this.src='https://via.placeholder.com/800x1000?text=Emprendimiento+2'">
   </div>
 
+  <!-- Imagen 4 -->
+  <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4"
+       onclick="openLightbox('emprendimientos/emprendimientos4.jpeg', 'Fotografía para emprendimientos')">
+    <img src="emprendimientos/emprendimientos4.jpeg" 
+         alt="Fotografía para emprendimientos"
+         loading="lazy"
+         class="max-w-full max-h-full object-contain"
+         onerror="this.src='https://via.placeholder.com/800x1000?text=Emprendimiento+4'">
+  </div>
+
+  <!-- Imagen 5 -->
+  <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4"
+       onclick="openLightbox('emprendimientos/emprendimientos5.jpeg', 'Fotografía para emprendimientos')">
+    <img src="emprendimientos/emprendimientos5.jpeg" 
+         alt="Fotografía para emprendimientos"
+         loading="lazy"
+         class="max-w-full max-h-full object-contain"
+         onerror="this.src='https://via.placeholder.com/800x1000?text=Emprendimiento+5'">
+  </div>
+
 </div>
   </div>
 
@@ -399,6 +429,30 @@
              loading="lazy"
              class="max-w-full max-h-full object-contain"
              onerror="this.src='https://via.placeholder.com/800x1000?text=Maternidad+2'">
+      </div>
+    </div>
+  </div>
+
+  <!-- Categoría: Cobertura de Eventos -->
+  <div id="category-eventos" class="category-content hidden">
+    <div class="mb-12 text-center">
+      <h3 class="font-serif text-2xl md:text-3xl text-gold mb-3">
+        Cobertura de Eventos
+      </h3>
+      <p class="text-neutral-500 text-sm tracking-wider max-w-xl mx-auto">
+        Momentos únicos · Historias completas · Emociones capturadas
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <!-- Imagen 1 -->
+      <div class="bg-neutral-100 group cursor-pointer flex items-center justify-center p-4"
+           onclick="openLightbox('eventos/eventos1.png', 'Cobertura de evento')">
+        <img src="eventos/eventos1.png" 
+             alt="Cobertura de evento"
+             loading="lazy"
+             class="max-w-full max-h-full object-contain"
+             onerror="this.src='https://via.placeholder.com/800x1000?text=Evento+1'">
       </div>
     </div>
   </div>
@@ -465,9 +519,9 @@
             </div>
             <div>
               <span class="text-xs tracking-[0.2em] text-neutral-400 block mb-1">INSTAGRAM</span>
-              <a href="https://instagram.com/nm.estudio" target="_blank" 
+              <a href="https://instagram.com/nazamancino_ph" target="_blank" 
                  class="text-lg font-medium text-black hover:text-gold transition-colors duration-300">
-                @nm.estudio
+                @nazamancino_ph
               </a>
             </div>
           </div>
@@ -530,7 +584,7 @@
 <!-- ================= FOOTER ================= -->
 <footer class="py-10 text-center border-t text-neutral-500 text-sm">
   <div class="max-w-7xl mx-auto px-6">
-    <p>© <span id="currentYear"></span> Nazarena Mancino Estudio Creativo. Todos los derechos reservados.</p>
+    <p>© <span id="currentYear"></span> Nazarena Mancino Fotografia Profesional. Todos los derechos reservados.</p>
   </div>
 </footer>
 
